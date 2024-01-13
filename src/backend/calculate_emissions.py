@@ -1,7 +1,6 @@
 import requests
 import json
 import pandas as pd
-import googlemaps
 from pathlib import Path
 
 MY_API_KEY = 'AIzaSyCcABN5KtIHVn3k5QRK8s3fK5tM1j1Lu7Y'

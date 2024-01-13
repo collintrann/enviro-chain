@@ -10,16 +10,17 @@ CORS(app)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    print("Received a request")
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
     file = request.files['file']
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
     if file:
-        temp = tempfile.NamedTemporaryFile(delete=False)
-        file.save(temp.name)
-        num_trips, total_distance, total_emissions = calculate_emissions_data.calculate_emissions(temp.name)
+        with tempfile.NamedTemporaryFile(delete=False) as temp:
+            file.save(temp.name)
+            temp.close()
+
+        num_trips, total_distance, total_emissions = calculate_emissions_data(temp.name)
 
         company_name = request.form.get('company_name', 'Company A')
         current_date = datetime.now().strftime("%Y-%m-%d")
@@ -29,9 +30,9 @@ def upload_file():
             "numTrips": num_trips,
             "totalMiles": total_distance,
             "totalEmissions": total_emissions
-        }     
+        }
 
-        os.unlink(temp.name) 
+        os.unlink(temp.name)
         return jsonify(response_data)
 
 if __name__ == '__main__':

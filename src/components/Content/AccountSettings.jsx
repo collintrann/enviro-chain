@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, Grid, Input, Select } from '@chakra-ui/react'
 
-function AccountSettings() {
+function ViewProfile() {
   return (
     <Grid
       templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
@@ -37,11 +37,10 @@ function AccountSettings() {
       <FormControl id="city">
         <FormLabel>City</FormLabel>
         <Select focusBorderColor="brand.blue" placeholder="Select city">
-          <option value="california">California</option>
-            California
+          <option value="newyork">New York</option>
           <option value="washington">Washington</option>
           <option value="toronto">Toronto</option>
-          <option value="newyork" selected>
+          <option value="california" selected>
             California
           </option>
           <option value="london">London</option>

@@ -48,7 +48,7 @@ def calculate_emissions_data(csv_file_path):
         numeric_str = ''.join(filter(str.isdigit, trip_distance))
         distance_float = float(numeric_str)
         total_distance += float(distance_float)
-    total_emissions = total_distance * 53 # 53 lbs of CO2 per mile
+    total_emissions = total_distance * 0.868 # 0.868 lbs of CO2 per passenger mile
     return (num_trips, total_distance, total_emissions)
 
 # origin = "New York, NY"
@@ -57,8 +57,8 @@ def calculate_emissions_data(csv_file_path):
 
 #print(get_distance(MY_API_KEY, origin, destination))
 
-print(Path.cwd())
-test = calculate_emissions_data('/src/backend/travel_expense_report.csv')
+# print(Path.cwd())
+# test = calculate_emissions_data('/src/backend/travel_expense_report.csv')
 
 #print(test)
 # "2,183 mi"

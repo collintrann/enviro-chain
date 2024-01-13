@@ -30,14 +30,19 @@ function AccountSettings() {
           placeholder="tcook@apple.com"
         />
       </FormControl>
+      <FormControl id="company">
+        <FormLabel>Company Name</FormLabel>
+        <Input focusBorderColor="brand.blue" type="text" placeholder="Apple" />
+      </FormControl>
       <FormControl id="city">
         <FormLabel>City</FormLabel>
         <Select focusBorderColor="brand.blue" placeholder="Select city">
           <option value="california">California</option>
+            California
           <option value="washington">Washington</option>
           <option value="toronto">Toronto</option>
           <option value="newyork" selected>
-            New York
+            California
           </option>
           <option value="london">London</option>
           <option value="netherland">Netherland</option>

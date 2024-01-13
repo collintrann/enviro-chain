@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 //import { BrowserRouter as Router, Route } from 'react-router-dom'
 //import { Routes, Route } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react'
-//import { theme } from 'helpers'
-import Cover from './Cover'
-import Main from './Main'
+import { ChakraProvider } from '@chakra-ui/react';
+import Main from './Main';
 import CircularProgress from '@mui/material/CircularProgress';
 import { readData } from '../firebaseService';
 import { extendTheme } from "@chakra-ui/react";

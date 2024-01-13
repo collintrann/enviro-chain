@@ -23,6 +23,7 @@ function App() {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('company_name', companyName);
+    console.log("Uploaded file.")
 
     return axios.post('http://localhost:5000/upload', formData, {
       headers: {
@@ -39,6 +40,7 @@ function App() {
     }
     setIsLoading(true);
     setUploadSuccess(false);
+    console.log("Handling upload.")
 
     try {
       const onUploadProgress = (progressEvent) => {
@@ -91,7 +93,7 @@ function App() {
       {!isLoading && uploadSuccess && (
         <Alert severity="success">Upload successful!</Alert>
       )}
-      {file && <button onClick={() => handleUpload()}>Process and Upload File</button>}
+      {file && <button onClick={handleUpload}>Process and Upload File</button>}
     </div>
   );
 }

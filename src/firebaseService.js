@@ -1,3 +1,4 @@
+import { FIREBASE_APP } from './Firebase.Config';
 import { getDatabase, ref, set, get, query, limitToFirst } from "firebase/database";
 
 export const writeData = (data) => {

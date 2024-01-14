@@ -113,6 +113,7 @@ export default function UserProfile() {
 
   if (loading) {
     return (
+      <div><MainNavigation /></div>>
       <div
         style={{
           display: "flex",
@@ -123,6 +124,7 @@ export default function UserProfile() {
       >
         <MainNavigation />
         <CircularProgress />
+        
       </div>
     );
   }

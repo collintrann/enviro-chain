@@ -82,7 +82,7 @@ function Upload() {
           style={{ display: "none" }}
           id="fileInput"
         />
-        <button onClick={() => document.getElementById("fileInput").click()}>
+        <button onClick={() => document.getElementById("fileInput").click()} className='upload-button'>
           Upload Travel Expenses
         </button>
       </header>

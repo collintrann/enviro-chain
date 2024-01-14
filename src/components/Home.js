@@ -102,6 +102,7 @@ const Home = () => {
       color: "white",
       backgroundColor: "#4CAF50",
       border: "none",
+      borderRadius: "4px",
       padding: "10px 20px",
       marginBottom: "10px",
       cursor: "pointer",

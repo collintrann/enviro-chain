@@ -11,7 +11,7 @@ function MainNavigation() {
             <Link to="/upload">Upload</Link>
           </li>
           <li>
-            <Link to="/view-profile">User Profile</Link>
+            <Link to="/view-profile">Profile</Link>
           </li>
           <li>
             <Link to="/">Log Out</Link>

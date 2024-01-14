@@ -1,6 +1,7 @@
 import React from 'react';
 import Login, { Render } from 'react-login-page';
 import Logo from 'react-login-page/logo';
+import classes from './Home.css'
 
 const Home = () => {
   return (

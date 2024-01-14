@@ -4,6 +4,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 import axios from 'axios';
+import MainNavigation from './MainNavigation';
 
 function Upload() {
   // const [file, setFile] = useState(null);
@@ -64,6 +65,7 @@ function Upload() {
 
   return (
     <div className="App">
+      <MainNavigation />
       <header className="App-header">
         {/* File input hidden; triggered by button */}
         <input 

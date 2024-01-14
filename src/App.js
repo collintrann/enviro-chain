@@ -4,8 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import UserProfile from './components/UserProfile';
 import Upload from './components/Upload';
 import Home from './components/Home';
-import Navbar from "./components/Navbar";
-import MainNavigation from './MainNavigation';
+//import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       {/* <Navbar /> */}
       {/* <header className="App-header">
       </header> */}
-      <MainNavigation />
+      {/* <MainNavigation /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/upload" element={<Upload />} />

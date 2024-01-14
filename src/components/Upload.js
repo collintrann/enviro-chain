@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { writeData } from '../firebaseService';
-import CircularProgress from '@mui/material/CircularProgress';
-import Alert from '@mui/material/Alert';
-import LinearProgress from '@mui/material/LinearProgress';
-import axios from 'axios';
-import MainNavigation from './MainNavigation';
+import React, { useState } from "react";
+import { writeData } from "../firebaseService";
+import CircularProgress from "@mui/material/CircularProgress";
+import Alert from "@mui/material/Alert";
+import LinearProgress from "@mui/material/LinearProgress";
+import axios from "axios";
+import MainNavigation from "./MainNavigation";
 
 function Upload() {
   // const [file, setFile] = useState(null);
@@ -14,22 +14,22 @@ function Upload() {
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    console.log("File selected:", selectedFile); 
+    console.log("File selected:", selectedFile);
     // setFile(selectedFile);
     handleUpload(selectedFile);
   };
 
   function uploadFile(file, companyName, onUploadProgress) {
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('company_name', companyName);
-    console.log("Uploaded file.")
+    formData.append("file", file);
+    formData.append("company_name", companyName);
+    console.log("Uploaded file.");
 
-    return axios.post('http://localhost:5000/upload', formData, {
+    return axios.post("http://localhost:5000/upload", formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
+        "Content-Type": "multipart/form-data",
       },
-      onUploadProgress
+      onUploadProgress,
     });
   }
 
@@ -40,17 +40,23 @@ function Upload() {
     }
     setIsLoading(true);
     setUploadSuccess(false);
-    console.log("Handling upload.")
+    console.log("Handling upload.");
 
     try {
       const onUploadProgress = (progressEvent) => {
-        const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+        const percentCompleted = Math.round(
+          (progressEvent.loaded * 100) / progressEvent.total
+        );
         setUploadProgress(percentCompleted);
         console.log(`${percentCompleted}% uploaded`);
       };
 
-      const companyName = "Company A";
-      const response = await uploadFile(uploadedFile, companyName, onUploadProgress);
+      const companyName = "Expense 3";
+      const response = await uploadFile(
+        uploadedFile,
+        companyName,
+        onUploadProgress
+      );
       if (response.data) {
         await writeData(response.data);
         setUploadSuccess(true);
@@ -68,14 +74,14 @@ function Upload() {
       <MainNavigation />
       <header className="App-header">
         {/* File input hidden; triggered by button */}
-        <input 
-          type="file" 
-          accept=".csv" 
-          onChange={handleFileChange} 
-          style={{ display: 'none' }} 
-          id="fileInput" 
+        <input
+          type="file"
+          accept=".csv"
+          onChange={handleFileChange}
+          style={{ display: "none" }}
+          id="fileInput"
         />
-        <button onClick={() => document.getElementById('fileInput').click()}>
+        <button onClick={() => document.getElementById("fileInput").click()}>
           Upload Travel Expenses
         </button>
       </header>

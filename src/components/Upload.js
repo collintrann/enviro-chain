@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
 // import { processCSV } from './helpers';  // TODO: Import your helper functions
-import { writeData } from './firebaseService';
-import './App.css';
-import UserProfile from './components/UserProfile';
+import { writeData } from '../firebaseService';
+import '../App.css';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -80,13 +78,7 @@ function Upload() {
         <button onClick={() => document.getElementById('fileInput').click()}>
           Upload Travel Expenses
         </button>
-        <Link to="/view-profile">
-          <button>My Profile</button>
-        </Link>
       </header>
-      <Routes>
-        <Route path="/view-profile" element={<UserProfile />} />
-      </Routes>
       {isLoading && (
         <>
           <CircularProgress />

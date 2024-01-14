@@ -2,7 +2,7 @@ import { Box, Button, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui
 import { FormControl, FormLabel, Grid, Input, Select } from '@chakra-ui/react'
 
 const Content = () => {
-  const tabs = ['Edit My Profile']
+  const tabs = ['Edit Company Profile']
 
   return (
     <Box
@@ -45,7 +45,7 @@ const Content = () => {
             >
               <FormControl id="company">
                 <FormLabel>Company Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Apple" />
+                <Input focusBorderColor="brand.blue" type="text" placeholder="Amazon" />
               </FormControl>
               <FormControl id="city">
                 <FormLabel>City</FormLabel>

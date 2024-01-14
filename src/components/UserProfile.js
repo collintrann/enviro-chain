@@ -41,32 +41,6 @@ const theme = extendTheme({
   // ... other theme configurations
 });
 
-const list = [
-  {
-    id: 1,
-    name: "Company Name",
-    value: 0,
-    color: "yellow",
-  },
-  {
-    id: 2,
-    name: "Total Trips",
-    value: 0,
-    color: "blue",
-  },
-  {
-    id: 3,
-    name: "Total Mileage",
-    value: 0,
-    color: "cadet",
-  },
-  {
-    id: 4,
-    name: "Carbon emissions",
-    value: 0,
-    color: "yellow",
-  },
-];
 function formatDateTime(isoString) {
   return moment(isoString).format("YYYY-MM-DD HH:mm:ss");
 }
@@ -124,6 +98,37 @@ export default function UserProfile() {
       </div>
     );
   }
+
+  const list = [
+    {
+      id: 1,
+      name: "Company Name",
+      value: companyData.name,
+      color: "yellow",
+    },
+    {
+      id: 2,
+      name: "Total Trips",
+      value: companyData.totalTrips + " trips",
+      color: "blue",
+    },
+    {
+      id: 3,
+      name: "Total Mileage",
+      value: companyData.totalMiles + " miles",
+      color: "cadet",
+    },
+    {
+      id: 4,
+      name: "Carbon emissions",
+      value: companyData.totalEmissions + " pounds",
+      color: "yellow",
+    },
+    {
+      id: 4,
+      name: "Last updated: " + formatDateTime(companyData.mostRecentDate),
+    },
+  ];
 
   return (
     <ChakraProvider theme={theme}>
@@ -192,10 +197,10 @@ export default function UserProfile() {
             </Modal>
             <VStack spacing={1}>
               <Heading as="h3" fontSize="xl" color="brand.dark">
-                Tim Cook
+                Andy Jassy
               </Heading>
               <Text color="brand.gray" fontSize="sm">
-                CEO of Apple
+                CEO of Amazon
               </Text>
             </VStack>
           </VStack>
@@ -224,20 +229,6 @@ export default function UserProfile() {
         </Box>
         <Content />
       </Container>
-      <div>
-        <h2>User Profile</h2>
-        {companyData ? (
-          <div>
-            <p>Name: {companyData.name}</p>
-            <p>Total Miles: {companyData.totalMiles}</p>
-            <p>Number of Trips: {companyData.totalTrips}</p>
-            <p>Total Emissions: {companyData.totalEmissions}</p>
-            <p>Last updated: {formatDateTime(companyData.mostRecentDate)}</p>
-          </div>
-        ) : (
-          <p>No expense data available.</p>
-        )}
-      </div>
     </ChakraProvider>
   );
 }

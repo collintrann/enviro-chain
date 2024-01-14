@@ -45,11 +45,11 @@ const Content = () => {
             >
               <FormControl id="firstName">
                 <FormLabel>First Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Tim" />
+                <Input focusBorderColor="brand.blue" type="text" placeholder="Andy" />
               </FormControl>
               <FormControl id="lastName">
                 <FormLabel>Last Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Cook" />
+                <Input focusBorderColor="brand.blue" type="text" placeholder="Jassy" />
               </FormControl>
               <FormControl id="phoneNumber">
                 <FormLabel>Phone Number</FormLabel>
@@ -64,7 +64,7 @@ const Content = () => {
                 <Input
                   focusBorderColor="brand.blue"
                   type="email"
-                  placeholder="tcook@apple.com"
+                  placeholder="ajassy@amazon.com"
                 />
               </FormControl>
               <FormControl id="company">
@@ -75,10 +75,10 @@ const Content = () => {
                 <FormLabel>City</FormLabel>
                 <Select focusBorderColor="brand.blue" placeholder="Select city">
                   <option value="newyork">New York</option>
-                  <option value="washington">Washington</option>
+                  <option value="california">California</option>
                   <option value="toronto">Toronto</option>
-                  <option value="california" selected>
-                    California
+                  <option value="washington" selected>
+                    Washington
                   </option>
                   <option value="london">London</option>
                   <option value="netherland">Netherland</option>

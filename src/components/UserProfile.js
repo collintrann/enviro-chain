@@ -10,6 +10,7 @@ import { Container } from "@chakra-ui/layout";
 import Content from "./Profile/Content";
 import { Box } from "@chakra-ui/react";
 import Actions from "./Profile/Actions";
+import MainNavigation from './MainNavigation';
 
 import {
   Avatar,
@@ -94,6 +95,7 @@ export default function UserProfile() {
           height: "100vh",
         }}
       >
+        <MainNavigation />
         <CircularProgress />
       </div>
     );

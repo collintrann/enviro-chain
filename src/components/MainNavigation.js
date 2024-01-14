@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import classes from './MainNavigation.css'
+import classes from "./MainNavigation.css";
 
 function MainNavigation() {
   return (
-    <div className='nav-bar-container'>
+    <div className="nav-bar-container">
       <nav>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to="/upload">Upload</Link>
           </li>
           <li>
-            <Link to='/upload'>Upload</Link>
+            <Link to="/view-profile">Profile</Link>
           </li>
           <li>
-            <Link to='/view-profile'>User Profile</Link>
+            <Link to="/">Log Out</Link>
           </li>
         </ul>
       </nav>

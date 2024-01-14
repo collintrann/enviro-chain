@@ -23,9 +23,6 @@ export default function Actions() {
 
   return (
     <VStack py={8} px={5} spacing={3}>
-      <Button w="full" variant="outline">
-        View Public Profile
-      </Button>
       <InputGroup>
         <Input
           ref={profileUrl}

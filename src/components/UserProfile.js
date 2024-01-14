@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-//import { BrowserRouter as Router, Route } from 'react-router-dom'
-//import { Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { readData } from "../firebaseService";
 import moment from "moment";
-import { extendTheme } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/layout";
 import Content from "./Profile/Content";
 import { Box } from "@chakra-ui/react";
 import Actions from "./Profile/Actions";
 import MainNavigation from './MainNavigation';
-
 import {
   Avatar,
   AvatarBadge,
@@ -31,43 +27,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const theme = extendTheme({
-  // Your theme configuration goes here
-  colors: {
-    brand: {
-      50: "#f9fafb",
-      // ... other color shades
-    },
-  },
-  // ... other theme configurations
-});
-
-const list = [
-  {
-    id: 1,
-    name: "Company Name",
-    value: 0,
-    color: "yellow",
-  },
-  {
-    id: 2,
-    name: "Total Trips",
-    value: 0,
-    color: "blue",
-  },
-  {
-    id: 3,
-    name: "Total Mileage",
-    value: 0,
-    color: "cadet",
-  },
-  {
-    id: 4,
-    name: "Carbon emissions",
-    value: 0,
-    color: "yellow",
-  },
-];
 function formatDateTime(isoString) {
   return moment(isoString).format("YYYY-MM-DD HH:mm:ss");
 }
@@ -122,15 +81,40 @@ export default function UserProfile() {
           height: "100vh",
         }}
       >
-        <MainNavigation />
         <CircularProgress />
         
       </div>
     );
   }
 
+  const list = [
+    {
+      id: 2,
+      name: "Total Trips",
+      value: companyData.totalTrips + " trips",
+      color: "blue",
+    },
+    {
+      id: 3,
+      name: "Total Mileage",
+      value: companyData.totalMiles + " miles",
+      color: "cadet",
+    },
+    {
+      id: 4,
+      name: "Carbon emissions",
+      value: companyData.totalEmissions + " pounds",
+      color: "yellow",
+    },
+    {
+      id: 4,
+      name: "Last updated: " + formatDateTime(companyData.mostRecentDate),
+    },
+  ];
+
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
+      <MainNavigation />
       <Container display={{ base: "block", md: "flex" }} maxW="container.xl">
         <Box
           as="aside"
@@ -141,7 +125,7 @@ export default function UserProfile() {
           rounded="md"
           borderWidth={1}
           borderColor="brand.light"
-          style={{ transform: "translateY(-100px)" }}
+          style={{ transform: "translateY(100px)" }}
         >
           <VStack
             spacing={3}
@@ -196,11 +180,8 @@ export default function UserProfile() {
             </Modal>
             <VStack spacing={1}>
               <Heading as="h3" fontSize="xl" color="brand.dark">
-                Tim Cook
+                Amazon.com, Inc.
               </Heading>
-              <Text color="brand.gray" fontSize="sm">
-                CEO of Apple
-              </Text>
             </VStack>
           </VStack>
           <VStack as="ul" spacing={0} listStyleType="none">
@@ -228,20 +209,6 @@ export default function UserProfile() {
         </Box>
         <Content />
       </Container>
-      <div>
-        <h2>User Profile</h2>
-        {companyData ? (
-          <div>
-            <p>Name: {companyData.name}</p>
-            <p>Total Miles: {companyData.totalMiles}</p>
-            <p>Number of Trips: {companyData.totalTrips}</p>
-            <p>Total Emissions: {companyData.totalEmissions}</p>
-            <p>Last updated: {formatDateTime(companyData.mostRecentDate)}</p>
-          </div>
-        ) : (
-          <p>No expense data available.</p>
-        )}
-      </div>
     </ChakraProvider>
   );
 }

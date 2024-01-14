@@ -16,7 +16,7 @@ const Content = () => {
       rounded="md"
       borderWidth={1}
       borderColor="gray.200"
-      style={{ transform: 'translateY(-100px)' }}
+      style={{ transform: 'translateY(100px)' }}
     >
       <Tabs>
         <TabList px={5}>
@@ -43,30 +43,6 @@ const Content = () => {
               templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
               gap={6}
             >
-              <FormControl id="firstName">
-                <FormLabel>First Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Tim" />
-              </FormControl>
-              <FormControl id="lastName">
-                <FormLabel>Last Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Cook" />
-              </FormControl>
-              <FormControl id="phoneNumber">
-                <FormLabel>Phone Number</FormLabel>
-                <Input
-                  focusBorderColor="brand.blue"
-                  type="tel"
-                  placeholder="(408) 996–1010"
-                />
-              </FormControl>
-              <FormControl id="emailAddress">
-                <FormLabel>Email Address</FormLabel>
-                <Input
-                  focusBorderColor="brand.blue"
-                  type="email"
-                  placeholder="tcook@apple.com"
-                />
-              </FormControl>
               <FormControl id="company">
                 <FormLabel>Company Name</FormLabel>
                 <Input focusBorderColor="brand.blue" type="text" placeholder="Apple" />
@@ -75,10 +51,10 @@ const Content = () => {
                 <FormLabel>City</FormLabel>
                 <Select focusBorderColor="brand.blue" placeholder="Select city">
                   <option value="newyork">New York</option>
-                  <option value="washington">Washington</option>
+                  <option value="california">California</option>
                   <option value="toronto">Toronto</option>
-                  <option value="california" selected>
-                    California
+                  <option value="washington" selected>
+                    Washington
                   </option>
                   <option value="london">London</option>
                   <option value="netherland">Netherland</option>

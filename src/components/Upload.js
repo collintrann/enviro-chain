@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-// import { processCSV } from './helpers';  // TODO: Import your helper functions
 import { writeData } from '../firebaseService';
-import '../App.css';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';

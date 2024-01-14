@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import { processCSV } from './helpers';  // TODO: Import your helper functions
-//import './App.css';
 import UserProfile from './components/UserProfile';
 import Upload from './components/Upload';
 import Home from './components/Home';

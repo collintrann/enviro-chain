@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
+import classes from './Upload.css'
 
 function NavBar() {
   const [navColour, updateNavbar] = useState(false);

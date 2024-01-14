@@ -5,6 +5,7 @@ import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 import axios from 'axios';
 import MainNavigation from './MainNavigation';
+import classes from './Upload.css';
 
 function Upload() {
   // const [file, setFile] = useState(null);

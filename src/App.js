@@ -4,7 +4,6 @@ import UserProfile from "./components/UserProfile";
 import Upload from "./components/Upload";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import MainNavigation from "./MainNavigation";
 
 function App() {
   return (

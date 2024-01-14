@@ -70,14 +70,13 @@ const Home = () => {
     logo: {
       fontWeight: "bold",
       fontSize: "50px",
-      color: "#e74c3c",
+      color: "#4CAF50",
       marginTop: "30px",
-      marginBottom: "35px",
     },
     logoImage: {
-      width: "300px",
-      height: "300px",
-      marginBottom: "20px",
+      width: "150px",
+      height: "150px",
+      marginBottom: "0px",
     },
     title: {
       fontSize: "30px",

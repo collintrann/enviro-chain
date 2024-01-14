@@ -3,7 +3,7 @@
   justify-content: end;
   align-items: center;
   height: 80px;
-  background-color: #add8e6;
+  background-color: #2a702d;
   font-family: "system-ui";
 }
 
@@ -19,7 +19,7 @@ ul {
 
 li a {
   margin-right: 40px; /* Adjust spacing as needed */
-  color: #00236e;
+  color: white;
   text-decoration: none;
   font-size: 1.4rem;
   transition: all 0.15s;
@@ -31,5 +31,5 @@ li a:hover {
 }
 
 body {
-  background-color: #00236e;
+  background-color: white;
 }

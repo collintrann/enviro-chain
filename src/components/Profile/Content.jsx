@@ -16,7 +16,7 @@ const Content = () => {
       rounded="md"
       borderWidth={1}
       borderColor="gray.200"
-      style={{ transform: 'translateY(-100px)' }}
+      style={{ transform: 'translateY(100px)' }}
     >
       <Tabs>
         <TabList px={5}>
@@ -43,30 +43,6 @@ const Content = () => {
               templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
               gap={6}
             >
-              <FormControl id="firstName">
-                <FormLabel>First Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Andy" />
-              </FormControl>
-              <FormControl id="lastName">
-                <FormLabel>Last Name</FormLabel>
-                <Input focusBorderColor="brand.blue" type="text" placeholder="Jassy" />
-              </FormControl>
-              <FormControl id="phoneNumber">
-                <FormLabel>Phone Number</FormLabel>
-                <Input
-                  focusBorderColor="brand.blue"
-                  type="tel"
-                  placeholder="(408) 996–1010"
-                />
-              </FormControl>
-              <FormControl id="emailAddress">
-                <FormLabel>Email Address</FormLabel>
-                <Input
-                  focusBorderColor="brand.blue"
-                  type="email"
-                  placeholder="ajassy@amazon.com"
-                />
-              </FormControl>
               <FormControl id="company">
                 <FormLabel>Company Name</FormLabel>
                 <Input focusBorderColor="brand.blue" type="text" placeholder="Apple" />

@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-//import { BrowserRouter as Router, Route } from 'react-router-dom'
-//import { Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { readData } from "../firebaseService";
 import moment from "moment";
-import { extendTheme } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/layout";
 import Content from "./Profile/Content";
 import { Box } from "@chakra-ui/react";
 import Actions from "./Profile/Actions";
 import MainNavigation from './MainNavigation';
-
 import {
   Avatar,
   AvatarBadge,
@@ -30,17 +26,6 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-
-const theme = extendTheme({
-  // Your theme configuration goes here
-  colors: {
-    brand: {
-      50: "#f9fafb",
-      // ... other color shades
-    },
-  },
-  // ... other theme configurations
-});
 
 function formatDateTime(isoString) {
   return moment(isoString).format("YYYY-MM-DD HH:mm:ss");
@@ -95,19 +80,12 @@ export default function UserProfile() {
           height: "100vh",
         }}
       >
-        <MainNavigation />
         <CircularProgress />
       </div>
     );
   }
 
   const list = [
-    {
-      id: 1,
-      name: "Company Name",
-      value: companyData.name,
-      color: "yellow",
-    },
     {
       id: 2,
       name: "Total Trips",
@@ -133,7 +111,8 @@ export default function UserProfile() {
   ];
 
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
+      <MainNavigation />
       <Container display={{ base: "block", md: "flex" }} maxW="container.xl">
         <Box
           as="aside"
@@ -144,7 +123,7 @@ export default function UserProfile() {
           rounded="md"
           borderWidth={1}
           borderColor="brand.light"
-          style={{ transform: "translateY(-100px)" }}
+          style={{ transform: "translateY(100px)" }}
         >
           <VStack
             spacing={3}
@@ -199,11 +178,8 @@ export default function UserProfile() {
             </Modal>
             <VStack spacing={1}>
               <Heading as="h3" fontSize="xl" color="brand.dark">
-                Andy Jassy
+                Amazon.com, Inc.
               </Heading>
-              <Text color="brand.gray" fontSize="sm">
-                CEO of Amazon
-              </Text>
             </VStack>
           </VStack>
           <VStack as="ul" spacing={0} listStyleType="none">
